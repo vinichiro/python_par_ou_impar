@@ -1,9 +1,10 @@
+import random
+from time import sleep
+
 print('\033[31m                             ATENÇÃO!!!!')
 
 print('NESSE JOGO SÓ PODEMOS USAR COISAS ESCRITAS CORRETAMENTE SEMPRE COM ACENTO E SEMPRE MINÚSCULO!!!!')
 
-import random
-from time import sleep
 print('\033[m-'*48)
 print('Esse jogo só pode ser jogado com números até 5!')
 print('-'*48)
@@ -30,9 +31,16 @@ print('Você jogou {}'.format(jogador))
 
 print('-'*20)
 
-print('O resulta foi {}'.format(soma))
+resultado = ''
 
-if soma % 2 == 0 and numero == 'ímpar':
+if soma % 2 == 0:
+    resultado = 'par'
+else:
+    resultado = 'ímpar'
+
+print('O resulta foi {} e {} é {}'.format(soma, soma, resultado))
+
+if resultado == numero:
+    print('Parabéns, você ganhou!')
+else:
     print('Você perdeu, mais sorte na próxima!')
-elif soma % 2 != 0 and numero == 'ímpar':
-    print('Você ganhou, parabéns!')
